@@ -1,51 +1,51 @@
-import requests
-from jsonschema import validate, ValidationError
+import json
+from jsonschema import validate
 
-url = "https://api.digikala.com/v1/search"
-params = {
-    "q": "گوشی موبایل"
-}
 
-schema = {
-    "type": "object",
-    "properties": {
-        "data": {
-            "type": "array",
-            "items": {
+def test_mocked_response():
+    with open("mock_response.json", "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    schema = {
+        "type": "object",
+        "properties": {
+            "data": {
                 "type": "object",
                 "properties": {
-                    "name": {"type": "string"},
-                    "price": {"type": "integer"}
+                    "products": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "title_fa": {"type": "string"},
+                                "price": {
+                                    "type": "object",
+                                    "properties": {
+                                        "selling_price": {"type": "number"}
+                                    },
+                                    "required": ["selling_price"]
+                                }
+                            },
+                            "required": ["title_fa", "price"]
+                        }
+                    }
                 },
-                "required": ["name", "price"]
+                "required": ["products"]
             }
-        }
-    },
-    "required": ["data"]
-}
+        },
+        "required": ["data"]
+    }
 
-try:
-    response = requests.get(url, params=params)
+    validate(instance=data, schema=schema)
 
-    if response.status_code == 200:
-        print(
-            f"Request was a Success with status code: {response.status_code}")
-        data = response.json()
+    products = data.get("data", {}).get("products", [])
 
-        try:
-            validate(instance=data, schema=schema)
-            print("Response matches the schema.")
-        except ValidationError as e:
-            print(f"Response does not match the schema: {e.message}")
-
-        print("Search Results:")
-        for item in data.get("data", []):
-            print(f"Product Name: {item.get('name')}")
-            print(f"Product Price: {item.get('price')}")
+    if len(products) > 0:
+        for item in products:
+            name = item.get("title_fa")
+            price = item.get("price", {}).get("selling_price")
+            print(f"Product Name: {name}")
+            print(f"Product Price: {price if price else 'Unknown'}")
             print("-" * 20)
-
     else:
-        print(f"Request failed with status code: {response.status_code}")
-
-except requests.exceptions.RequestException as e:
-    print(f"An error occurred: {e}")
+        print("No products found.")
