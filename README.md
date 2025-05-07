@@ -1,0 +1,112 @@
+# Digikala QA Automation Task
+
+This project is part of a QA evaluation and includes automation and manual testing strategies for an e-commerce website inspired by Digikala.
+
+---
+
+## 📁 Project Structure
+
+```
+digikala_qa_task/
+├── robot-tests/
+│   ├── login-tests.robot
+│   └── cart-tests.robot
+│
+├── api-tests/
+│   └── product-api-test.py
+│
+├── performance-test/
+│   └── locustfile.py
+│
+├── bug-reports/
+│   ├── bug-report-1.md
+│   └── bug-report-2.md
+│
+├── digikala-manual-test-cases.pdf
+├── performance-summary.md
+└── README.md
+```
+
+---
+
+## ✅ Tools Used
+
+- Robot Framework + SeleniumLibrary
+- Python (Requests library for API tests)
+- Locust for load testing
+- Markdown for bug reports
+- PDF for manual test documentation
+
+---
+
+## 🚀 How to Run the Tests
+
+### UI Tests (Robot Framework)
+
+1. Install Robot Framework:
+
+```bash
+pip install robotframework
+pip install robotframework-seleniumlibrary
+```
+
+2. Run tests:
+
+robot robot-tests/login-tests.robot
+robot robot-tests/cart-tests.robot
+```
+
+---
+
+### API Tests (Python)
+
+Run with:
+
+```bash
+python api-tests/product-api-test.py
+```
+
+---
+
+### Performance Test (Locust)
+
+1. Install Locust:
+
+```bash
+pip install locust
+```
+
+2. Run the test:
+
+```bash
+locust -f performance-test/locustfile.py
+```
+
+Then open `http://localhost:8089` in your browser and start the test.
+
+---
+
+## 🐞 Bug Reports
+
+Bug reports are located in the `bug-reports` folder. Each includes:
+- Title
+- Steps to reproduce
+- Expected vs actual result
+- Severity
+
+---
+
+## 📄 Manual Test Cases
+
+Manual test cases are documented in the file:
+- `digikala-manual-test-cases.pdf`
+
+---
+
+## 📊 Performance Summary
+
+See `performance-summary.md` for notes on system behavior under load.
+
+---
+
+

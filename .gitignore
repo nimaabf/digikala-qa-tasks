@@ -1,0 +1,30 @@
+# Ignore Python bytecode files
+*.pyc
+*.pyo
+__pycache__/
+
+# Ignore virtual environments
+venv/
+env/
+
+# Ignore IDE settings
+.idea/
+.vscode/
+
+# Ignore logs and reports
+*.log
+*.json
+*.html
+
+# Ignore Locust reports
+locustfile.py
+*.csv
+locustfiles/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore test result files
+*.xml
+*.json
