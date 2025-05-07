@@ -41,17 +41,14 @@ digikala_qa_task/
 
 ## 🚀 How to Run the Tests
 
-### UI Tests (Robot Framework)
+## 📦 Setup & Installation
 
-1. Install Robot Framework:
-
+Install all dependencies using:
 ```bash
-pip install robotframework
-pip install robotframework-seleniumlibrary
+pip install -r requirements.txt
 ```
-
 2. Run tests:
-
+```bash
 robot robot-tests/login-tests.robot
 robot robot-tests/cart-tests.robot
 ```
@@ -70,13 +67,8 @@ python api-tests/product-api-test.py
 
 ### Performance Test (Locust)
 
-1. Install Locust:
 
-```bash
-pip install locust
-```
-
-2. Run the test:
+1. Run the test:
 
 ```bash
 locust -f performance-test/locustfile.py
