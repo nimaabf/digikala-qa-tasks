@@ -33,7 +33,6 @@ digikala_qa_task/
 │ ├── login.feature
 │ └── search-product.feature
 │
-├── .git/
 ├── .gitignore
 ├── cart-log.html
 ├── cart-output.xml
@@ -59,7 +58,6 @@ digikala_qa_task/
 - Python (Requests library for API tests)
 - Locust for load testing
 - Markdown for bug reports
-- PDF for manual test documentation
 
 ---
 
@@ -67,7 +65,7 @@ digikala_qa_task/
 
 ## 📦 Setup & Installation
 
-Install all dependencies using:
+1. Install all dependencies using:
 ```bash
 pip install -r requirements.txt
 ```
@@ -112,12 +110,28 @@ Bug reports are located in the `bug-reports` folder. Each includes:
 
 ---
 
+## 🖼️ Test Evidence
+selenium-screenshot-1.png: Captured screenshot during a Selenium test for visual confirmation or error evidence.
+
+
+
 ## 📄 Manual Test Cases
 
 Manual test cases are documented in the file:
 - `digikala-manual-test-cases.pdf`
 
 ---
+
+## 🧪 Feature-Based Test Cases (BDD)
+Behavior-driven test cases are defined using Gherkin syntax in the test-cases/ directory:
+
+login.feature
+add-to-cart.feature
+checkout.feature
+search-product.feature
+invalid-login.feature
+
+These are useful for integration with frameworks like Cucumber or Behave.
 
 ## 📊 Performance Summary
 
