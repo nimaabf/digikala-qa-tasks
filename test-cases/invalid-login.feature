@@ -1,4 +1,4 @@
-Feature: Login functionality
+Feature:Invalid Login functionality
 
   Scenario: Invalid login should show error
     Given the user is on the Digikala login page
