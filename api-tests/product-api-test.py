@@ -1,5 +1,5 @@
 import json
-from jsonschema import validate
+from jsonschema import validate, ValidationError
 
 
 def test_mocked_response():
@@ -36,16 +36,18 @@ def test_mocked_response():
         "required": ["data"]
     }
 
-    validate(instance=data, schema=schema)
+    try:
+        validate(instance=data, schema=schema)
+    except ValidationError as e:
+        assert False, f"Schema validation failed: {e.message}"
 
-    products = data.get("data", {}).get("products", [])
-
-    if len(products) > 0:
-        for item in products:
-            name = item.get("title_fa")
-            price = item.get("price", {}).get("selling_price")
-            print(f"Product Name: {name}")
-            print(f"Product Price: {price if price else 'Unknown'}")
-            print("-" * 20)
-    else:
+    products = data["data"]["products"]
+    if not products:
         print("No products found.")
+    else:
+        for item in products:
+            name = item["title_fa"]
+            price = item["price"]["selling_price"]
+            print(f"Product: {name}")
+            print(f"Price: {price}")
+            print("-" * 20)
