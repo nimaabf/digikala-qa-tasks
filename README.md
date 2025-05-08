@@ -17,6 +17,14 @@ digikala_qa_task/
 │ ├── bug-report-1.md
 │ └── bug-report-2.md
 │
+├── reports/
+│ ├── cart-log.html
+│ └── cart-output.xml
+│ └── cart-report.html
+│ ├── login-log.html
+│ └── login-output.xml
+│ └── login-report.html
+│
 ├── performance-test/
 │ ├── locustfile.py
 │ └── performance-test-reports/
@@ -111,6 +119,7 @@ Bug reports are located in the `bug-reports` folder. Each includes:
 ---
 
 ## 🖼️ Test Evidence
+Robots Report Files are in Reports folder
 selenium-screenshot-1.png: Captured screenshot during a Selenium test for visual confirmation or error evidence.
 
 
