@@ -26,5 +26,5 @@ locustfiles/
 Thumbs.db
 
 # Ignore test result files
-*.xml
+# *.xml
 *.json

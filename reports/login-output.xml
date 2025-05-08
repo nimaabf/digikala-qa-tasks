@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.1 on win32)" generated="2025-05-07T19:55:54.063954" rpa="false" schemaversion="5">
+<suite id="s1" name="Login-Tests" source="C:\Users\LENOVO\Desktop\digikala_qa_task\robot-tests\login-tests.robot">
+<test id="s1-t1" name="Valid Login Should Succeed" line="13">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-07T19:55:54.328119" level="INFO">Opening browser 'Chrome' to base url 'https://www.digikala.com/users/login/?backUrl=/'.</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-07T19:55:54.328119" elapsed="3.832559"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-07T19:55:58.161688" elapsed="1.123822"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//input[@name='username']</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-07T19:55:59.285510" elapsed="1.576643"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-07T19:56:00.864155" level="INFO">Typing text 'nima.ab.graphic@gmail.com' into text field 'xpath=//input[@name='username']'.</msg>
+<arg>xpath=//input[@name='username']</arg>
+<arg>${VALID_EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-07T19:56:00.863152" elapsed="0.184458"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-07T19:56:01.047610" level="INFO">Clicking button 'xpath=//button[@type='submit' and @data-cro-id='login-register']'.</msg>
+<arg>xpath=//button[@type='submit' and @data-cro-id='login-register']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-07T19:56:01.047610" elapsed="0.096435"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//input[@name='password']</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-07T19:56:01.144045" elapsed="0.511688"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-07T19:56:01.656701" level="INFO">Typing text 'Abc@1234' into text field 'xpath=//input[@name='password']'.</msg>
+<arg>xpath=//input[@name='password']</arg>
+<arg>${VALID_PASS}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-07T19:56:01.656701" elapsed="0.091317"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-07T19:56:01.749144" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>xpath=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-07T19:56:01.749144" elapsed="0.118834"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CLOSE_POPUP_BTN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-07T19:56:01.867978" elapsed="1.322521"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-07T19:56:03.191711" level="INFO">Clicking element 'xpath=//button[contains(., 'نه')]'.</msg>
+<arg>${CLOSE_POPUP_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-07T19:56:03.191711" elapsed="0.105078"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[@data-cro-id='HP-profile-header']</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-07T19:56:03.296789" elapsed="0.352414"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-07T19:56:03.650304" elapsed="2.169774"/>
+</kw>
+<status status="PASS" start="2025-05-07T19:55:54.327223" elapsed="11.496022"/>
+</test>
+<test id="s1-t2" name="Invalid Login Should Show Error" line="27">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-07T19:56:05.827242" level="INFO">Opening browser 'Chrome' to base url 'https://www.digikala.com/users/login/?backUrl=/'.</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-07T19:56:05.827242" elapsed="4.898901"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-07T19:56:10.726143" elapsed="0.038591"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//input[@name='username']</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-07T19:56:10.765734" elapsed="1.561770"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-07T19:56:12.328503" level="INFO">Typing text 'nima.ab.graphic@gmail.com' into text field 'xpath=//input[@name='username']'.</msg>
+<arg>xpath=//input[@name='username']</arg>
+<arg>${VALID_EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-07T19:56:12.327504" elapsed="0.193212"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-07T19:56:12.521750" level="INFO">Clicking button 'xpath=//button[@type='submit' and @data-cro-id='login-register']'.</msg>
+<arg>xpath=//button[@type='submit' and @data-cro-id='login-register']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-07T19:56:12.521750" elapsed="0.074162"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//input[@name='password']</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-07T19:56:12.595912" elapsed="0.439131"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-07T19:56:13.035954" level="INFO">Typing text 'wrong_password' into text field 'xpath=//input[@name='password']'.</msg>
+<arg>xpath=//input[@name='password']</arg>
+<arg>${INVALID_PASS}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-07T19:56:13.035954" elapsed="0.075021"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-07T19:56:13.111948" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>xpath=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-07T19:56:13.111948" elapsed="0.069516"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>اطلاعات کاربری نادرست است</arg>
+<arg>timeout=10</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-07T19:56:13.181464" elapsed="0.466662"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-07T19:56:13.649126" elapsed="2.174566"/>
+</kw>
+<status status="PASS" start="2025-05-07T19:56:05.826245" elapsed="9.998633"/>
+</test>
+<status status="PASS" start="2025-05-07T19:55:54.066297" elapsed="21.759597"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login-Tests" id="s1" pass="2" fail="0" skip="0">Login-Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

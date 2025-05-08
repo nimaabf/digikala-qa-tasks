@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.1 on win32)" generated="2025-05-07T20:02:09.717642" rpa="false" schemaversion="5">
+<suite id="s1" name="Cart-Tests" source="C:\Users\LENOVO\Desktop\digikala_qa_task\robot-tests\cart-tests.robot">
+<test id="s1-t1" name="Add Product To Cart Without Login" line="17">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-07T20:02:09.961410" level="INFO">Opening browser 'chrome' to base url 'https://www.digikala.com'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-07T20:02:09.961410" elapsed="10.110171"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-07T20:02:20.072604" elapsed="0.044495"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CLOSE_POPUP_BTN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-07T20:02:20.117099" elapsed="2.405673"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-07T20:02:22.523782" level="INFO">Clicking element 'xpath=//button[contains(., 'فعلا نه')]'.</msg>
+<arg>${CLOSE_POPUP_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-07T20:02:22.522772" elapsed="0.067270"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEARCH_BOX}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-07T20:02:22.590042" elapsed="0.046907"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-07T20:02:22.638513" level="INFO">Clicking element 'xpath=//span[@data-cro-id='searchbox-type']'.</msg>
+<arg>${SEARCH_BOX}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-07T20:02:22.637979" elapsed="0.265175"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEARCH_INPUT}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-07T20:02:22.905155" elapsed="0.267381"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-07T20:02:23.174539" level="INFO">Typing text 'گوشی موبایل' into text field 'xpath=//input[@type='text']'.</msg>
+<arg>${SEARCH_INPUT}</arg>
+<arg>${SEARCH_TEXT}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-07T20:02:23.173540" elapsed="0.311184"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-05-07T20:02:23.485747" level="INFO">Sending key(s) ('RETURN',) to xpath=//input[@type='text'] element.</msg>
+<msg time="2025-05-07T20:02:23.823098" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2025-05-07T20:02:23.823098" level="INFO">Releasing special key RETURN.</msg>
+<arg>${SEARCH_INPUT}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-05-07T20:02:23.485747" elapsed="0.380286"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${PRODUCT_LINK}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-07T20:02:23.867032" elapsed="2.279012"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-07T20:02:26.147047" level="INFO">Clicking element 'xpath=(//div[contains(@class, 'product-list_ProductList__item__LiiNI')])[1]//a'.</msg>
+<arg>${PRODUCT_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-07T20:02:26.147047" elapsed="0.138334"/>
+</kw>
+<kw name="Get Window Handles" owner="SeleniumLibrary">
+<msg time="2025-05-07T20:02:26.300377" level="INFO">${WINDOWS} = ['2B4D130196C6C8510F13986EAAF38BFF', '1F96974604295FA7D2496B540F352BF5']</msg>
+<var>${WINDOWS}</var>
+<doc>Returns all child window handles of the selected browser as a list.</doc>
+<status status="PASS" start="2025-05-07T20:02:26.286380" elapsed="0.013997"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>${WINDOWS[1]}</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" start="2025-05-07T20:02:26.301402" elapsed="0.090294"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ADD_TO_CART_BTN}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-07T20:02:26.391696" elapsed="1.209413"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-07T20:02:27.602110" level="INFO">Clicking button 'xpath=//button[@data-cro-id='pdp-add-to-cart']'.</msg>
+<arg>${ADD_TO_CART_BTN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-07T20:02:27.601109" elapsed="0.380600"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-07T20:02:30.983833" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-07T20:02:27.981709" elapsed="3.002124"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-07T20:02:30.985879" level="INFO">Opening url 'https://www.digikala.com/checkout/cart/'</msg>
+<arg>${CART_PAGE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-07T20:02:30.985879" elapsed="0.205723"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${CONTINUE_SHOPPING_BTN}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-07T20:02:31.192600" elapsed="0.739136"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-07T20:02:31.932719" level="INFO">Clicking element 'xpath=//a[@data-cro-id='cart-continue-shopping' and contains(., 'تایید و تکمیل سفارش')]'.</msg>
+<arg>${CONTINUE_SHOPPING_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-07T20:02:31.932719" elapsed="0.159722"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-07T20:02:37.094702" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-07T20:02:32.094442" elapsed="5.000260"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-07T20:02:37.095727" elapsed="2.392730"/>
+</kw>
+<status status="PASS" start="2025-05-07T20:02:09.960415" elapsed="29.529575"/>
+</test>
+<status status="PASS" start="2025-05-07T20:02:09.718810" elapsed="29.772195"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Cart-Tests" id="s1" pass="1" fail="0" skip="0">Cart-Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
