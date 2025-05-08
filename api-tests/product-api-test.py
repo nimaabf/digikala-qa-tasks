@@ -42,12 +42,19 @@ def test_mocked_response():
         assert False, f"Schema validation failed: {e.message}"
 
     products = data["data"]["products"]
-    if not products:
-        print("No products found.")
-    else:
-        for item in products:
-            name = item["title_fa"]
-            price = item["price"]["selling_price"]
-            print(f"Product: {name}")
-            print(f"Price: {price}")
-            print("-" * 20)
+
+    # Open a file in write mode to save the output
+    with open("output.txt", "w", encoding="utf-8") as output_file:
+        if not products:
+            output_file.write("No products found.\n")
+        else:
+            for item in products:
+                name = item["title_fa"]
+                price = item["price"]["selling_price"]
+                output_file.write(f"Product: {name}\n")
+                output_file.write(f"Price: {price}\n")
+                output_file.write("-" * 20 + "\n")
+
+
+# Call the function to execute the validation and save output
+test_mocked_response()
