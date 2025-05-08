@@ -3,7 +3,7 @@
 ## Title: Add to Cart Button Not Responding
 
 ### Steps to Reproduce:
-1. Navigate to a product page.
+1. Navigate to a Digikala/product page.
 2. Click on the "Add to Cart" button.
 3. Check the cart icon for updates.
 

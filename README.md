@@ -41,19 +41,9 @@ digikala_qa_task/
 │ ├── login.feature
 │ └── search-product.feature
 │
-├── .gitignore
-├── cart-log.html
-├── cart-output.xml
-├── cart-report.html
 ├── digikala-manual-test-cases.pdf
-├── log.html
-├── login-log.html
-├── login-output.xml
-├── login-report.html
-├── output.xml
 ├── performance-summary.md
 ├── README.md
-├── report.html
 ├── requirements.txt
 └── selenium-screenshot-1.png
 ```
