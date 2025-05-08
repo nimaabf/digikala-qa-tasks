@@ -1,0 +1,18 @@
+{
+    "data": {
+        "products": [
+            {
+                "title_fa": "گوشی تستی 1",
+                "price": {
+                    "selling_price": 15000000
+                }
+            },
+            {
+                "title_fa": "گوشی تستی 2",
+                "price": {
+                    "selling_price": 18000000
+                }
+            }
+        ]
+    }
+}

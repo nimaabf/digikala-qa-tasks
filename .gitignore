@@ -17,9 +17,9 @@ env/
 # *.html
 
 # Ignore Locust reports
-locustfile.py
-*.csv
-locustfiles/
+# locustfile.py
+# *.csv
+# locustfiles/
 
 # Ignore system files
 .DS_Store
@@ -27,4 +27,4 @@ Thumbs.db
 
 # Ignore test result files
 # *.xml
-*.json
+# *.json
