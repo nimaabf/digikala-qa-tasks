@@ -8,23 +8,47 @@ This project is part of a QA evaluation and includes automation and manual testi
 
 ```
 digikala_qa_task/
-├── robot-tests/
-│   ├── login-tests.robot
-│   └── cart-tests.robot
-│
 ├── api-tests/
-│   └── product-api-test.py
-│
-├── performance-test/
-│   └── locustfile.py
+│ ├── product-api-test.py
+│ ├── mock_response.json
+│ └── .pytest_cache/
 │
 ├── bug-reports/
-│   ├── bug-report-1.md
-│   └── bug-report-2.md
+│ ├── bug-report-1.md
+│ └── bug-report-2.md
 │
+├── performance-test/
+│ ├── locustfile.py
+│ └── performance-test-reports/
+│ └── performance-test-report.pdf
+│
+├── robot-tests/
+│ ├── cart-tests.robot
+│ └── login-tests.robot
+│
+├── test-cases/
+│ ├── add-to-cart.feature
+│ ├── checkout.feature
+│ ├── invalid-login.feature
+│ ├── login.feature
+│ └── search-product.feature
+│
+├── .git/
+├── .gitignore
+├── cart-log.html
+├── cart-output.xml
+├── cart-report.html
 ├── digikala-manual-test-cases.pdf
+├── log.html
+├── login-log.html
+├── login-output.xml
+├── login-report.html
+├── output.xml
 ├── performance-summary.md
-└── README.md
+├── README.md
+├── report.html
+├── requirements.txt
+└── selenium-screenshot-1.png
 ```
 
 ---
@@ -41,17 +65,14 @@ digikala_qa_task/
 
 ## 🚀 How to Run the Tests
 
-### UI Tests (Robot Framework)
+## 📦 Setup & Installation
 
-1. Install Robot Framework:
-
+Install all dependencies using:
 ```bash
-pip install robotframework
-pip install robotframework-seleniumlibrary
+pip install -r requirements.txt
 ```
-
 2. Run tests:
-
+```bash
 robot robot-tests/login-tests.robot
 robot robot-tests/cart-tests.robot
 ```
@@ -70,13 +91,8 @@ python api-tests/product-api-test.py
 
 ### Performance Test (Locust)
 
-1. Install Locust:
 
-```bash
-pip install locust
-```
-
-2. Run the test:
+1. Run the test:
 
 ```bash
 locust -f performance-test/locustfile.py
