@@ -11,10 +11,10 @@ env/
 .idea/
 .vscode/
 
-# Ignore logs and reports
-*.log
-*.json
-*.html
+# # Ignore logs and reports
+# *.log
+# *.json
+# *.html
 
 # Ignore Locust reports
 locustfile.py
